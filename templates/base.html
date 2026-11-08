@@ -133,13 +133,17 @@
                     <h3 class="widget-heading">Navigation</h3>
                     <ul class="list-unstyled float-start me-5">
                         <li><a href="#">Overview</a></li>
-                        <li><a href="#">About Us</a></li>
+                        {% url 'about' as about_url %}
+                        <li>
+                            <a class="nav-link{% if request.path == about_url %} active {% endif %}"
+                               href="{% url 'about' %}">About</a>
+                        </li>
                         <li><a href="#">Find Buyers</a></li>
-                    </ul>
-                    <ul class="list-unstyled float-start">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
+                        {% url 'services' as services_url %}
+                        <li>
+                            <a class="nav-link{% if request.path == services_url %} active {% endif %}"
+                               href="{% url 'services' %}">Services</a>
+                        </li>
                     </ul>
                 </div>
             </div>

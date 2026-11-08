@@ -1,3 +1,5 @@
+from encodings import iso2022_kr
+
 from django.test import TestCase
 
 
